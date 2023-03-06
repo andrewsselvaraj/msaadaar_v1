@@ -12,7 +12,11 @@ public class AadaarController {
 	public HashMap<String,String> validateAadaar(String aadaarNo)
 	{
 		HashMap<String,String> hm = new  HashMap<String,String>();
-		hm.put("status", aadaarNo);
+		
+		if(Integer.parseInt(aadaarNo)%2==0)
+			hm.put("status", "success");
+		else
+			hm.put("status", "fail");
 		return hm;
 	}
 }
